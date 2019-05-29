@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
-import visibilityFilter from './visibilityFilter';
 
-const todoApp = combineReducers({
-    todos,
-    visibilityFilter
+import { user } from './userReducer';
+import { dashboard, dashboard2, dashboard3 } from './dashboardReducer';
+
+export const rootReducer = combineReducers({
+    user,
+    dashboard,
+    dashboard2,
+    dashboard3,
 });
-
-export default todoApp;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export const Mixin = InnerComponent => class extends Component {
     componentDidMount() {
@@ -6,11 +6,11 @@ export const Mixin = InnerComponent => class extends Component {
     }
 
     render() {
-      return (
-          <InnerComponent
-              {...this.state}
-              {...this.props}
-          />
-      )
+        return (
+            <InnerComponent
+                {...this.state}
+                {...this.props}
+            />
+        );
     }
 };
