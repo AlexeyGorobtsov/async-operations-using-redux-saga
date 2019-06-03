@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import { Dashboard } from '../components/Dashboard';
-import Mixin from './CustomMixin';
+import { Mixin } from './CustomMixin';
 
 const Panel = props => (
     <div className={'col-md-4'}>
@@ -16,10 +16,13 @@ const Panel = props => (
 
 const PanelMixed = Mixin(Panel);
 
-const mapStateToProps = state => ({
-    user: state.user,
-    dashboard: state.dashboard
-});
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+        user: state.user,
+        dashboard: state.dashboard
+    };
+}
 
 const mapDispatchToProps = dispatch => ({
   loadDashboard: () => {

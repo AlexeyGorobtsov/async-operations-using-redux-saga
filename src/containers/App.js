@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 export class App extends Component {
   render() {
+      console.log(this)
       return (
           <div className={'container-fluid'}>
             <div className={'container'}>
