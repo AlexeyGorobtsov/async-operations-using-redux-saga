@@ -23,7 +23,7 @@ export function* isolatedFlight() {
         const flight = yield call(loadFlight, departure.flightID);
         yield put({ type: 'FETCH_DASHBOARD3_SUCCESS', payload: { flight } });
     } catch (e) {
-
+        yield put({ type: 'FETCH_FAILED', error: e.message });
     }
 }
 

@@ -8,8 +8,8 @@ export class TravelServiceApi {
                 })), 3000)
         }));
 
-    static getDeparture = user => {
-        return new Promise((resolve => {
+    static getDeparture = user =>
+        new Promise((resolve => {
             setTimeout(() =>
                 resolve(Object.assign({}, {
                     userID: user.email,
@@ -17,7 +17,7 @@ export class TravelServiceApi {
                     date: "10/27/2016 16:00PM"
                 })), 2500)
         }));
-    };
+
 
     static getFlight = flightID =>
         new Promise((resolve =>
@@ -36,7 +36,7 @@ export class TravelServiceApi {
     static getForecast = date =>
         new Promise((resolve) =>
             setTimeout(() =>
-                resolve(Object.assign({}, { date: date, forecast: 'rain'})),
-            2000)
+                    resolve(Object.assign({}, {date: date, forecast: 'rain'})),
+                2000)
         )
 }
