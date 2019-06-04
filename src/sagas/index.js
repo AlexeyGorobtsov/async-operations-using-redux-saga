@@ -1,4 +1,4 @@
-import  takeLatest  from 'redux-saga';
+import  { takeLatest } from 'redux-saga/effects';
 import { fork } from 'redux-saga/effects'
 
 import { loadUser} from './loadUser';
@@ -8,12 +8,11 @@ import { loadDashboardNonSequencedNonBlocking, isolatedForecast, isolatedFlight 
 
 
 export function* rootSaga() {
-    yield [
-        fork(loadUser),
-        takeLatest('LOAD_DASHBOARD', loadDashboardSequenced),
-        takeLatest('LOAD_DASHBOARD_NON_SEQUENCED', loadDashboardNonSequenced),
-        takeLatest('LOAD_DASHBOARD_NON_SEQUENCED_NON_BLOCKING', loadDashboardNonSequencedNonBlocking),
-        fork(isolatedForecast),
-        fork(isolatedFlight)
-    ];
+        yield fork(loadUser);
+        yield takeLatest('LOAD_DASHBOARD', loadDashboardSequenced);
+        yield takeLatest('LOAD_DASHBOARD_NON_SEQUENCED', loadDashboardNonSequenced);
+        yield takeLatest('LOAD_DASHBOARD_NON_SEQUENCED_NON_BLOCKING', loadDashboardNonSequencedNonBlocking);
+        yield fork(isolatedForecast);
+        yield fork(isolatedFlight);
+
 }

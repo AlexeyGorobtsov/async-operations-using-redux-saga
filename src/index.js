@@ -8,6 +8,9 @@ import { App } from './containers/App';
 import './styles/styles.css'
 import { rootReducer } from './redusers';
 import { rootSaga } from './sagas';
+import PanelMixed from './containers/Panel';
+import PanelMixed2 from './containers/Panel2';
+import PanelMixed3 from './containers/Panel3';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -19,7 +22,10 @@ sagaMiddleware.run(rootSaga);
 
 render(
     <Provider store={store}>
-        <App />
+        <App panel={<PanelMixed/>}
+             panel2={<PanelMixed2/>}
+             panel3={<PanelMixed3/>}
+        />
     </Provider>,
     document.getElementById('root')
 );

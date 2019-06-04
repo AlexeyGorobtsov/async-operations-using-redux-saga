@@ -22,7 +22,7 @@ const mapStateToProps = state => {
         user: state.user,
         dashboard: state.dashboard
     };
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   loadDashboard: () => {

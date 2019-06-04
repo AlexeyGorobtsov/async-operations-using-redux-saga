@@ -5,7 +5,7 @@ export const getUserFromState = state => state.user;
 
 export function* loadDashboardNonSequenced() {
     try {
-        yield take('FETCH_USSER_SUCCESS');
+        yield take('FETCH_USER_SUCCESS');
         const user = yield select(getUserFromState);
         const departure = yield call(loadDeparture, user);
         const [flight, forecast] = yield [

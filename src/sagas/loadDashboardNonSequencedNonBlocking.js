@@ -32,7 +32,7 @@ export function* isolatedForecast() {
         const departure = yield take('FETCH_DEPARTURE3_SUCCESS');
 
         const forecast = yield call(loadForecast, departure.date);
-        yield put({ type: 'FETCH_DASHBOARD_SUCCESS', payload: { forecast } });
+        yield put({ type: 'FETCH_DASHBOARD3_SUCCESS', payload: { forecast } });
 
     } catch (e) {
         yield put({ type: 'FETCH_FAILED', error: e.message });

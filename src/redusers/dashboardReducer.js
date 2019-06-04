@@ -1,6 +1,6 @@
 export const dashboard = (state = {}, action) => {
     switch (action.type) {
-        case 'FETCHING_DASHBOARD_SUCCESS':
+        case 'FETCH_DASHBOARD_SUCCESS':
             return {...state, ...action.payload};
         default:
             return state;
@@ -9,7 +9,7 @@ export const dashboard = (state = {}, action) => {
 
 export const dashboard2 = (state = {}, action) => {
     switch (action.type) {
-        case 'FETCHING_DASHBOARD2_SUCCESS':
+        case 'FETCH_DASHBOARD2_SUCCESS':
             return {...state, ...action.payload};
         default:
             return state;
@@ -18,7 +18,7 @@ export const dashboard2 = (state = {}, action) => {
 
 export const dashboard3 = (state = {}, action) =>{
     switch (action.type) {
-        case 'FETCHING_DASHBOARD3_SUCCESS':
+        case 'FETCH_DASHBOARD3_SUCCESS':
             return {...state, ...action.payload};
         default:
             return state;

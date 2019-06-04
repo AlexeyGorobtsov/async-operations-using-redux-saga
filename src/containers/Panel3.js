@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Dashboard } from '../components/Dashboard';
-import Mixin from './CustomMixin';
+import { Mixin } from './CustomMixin';
 
 const Panel = props => (
     <div className={'col-md-4'}>

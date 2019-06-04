@@ -8,7 +8,7 @@ export function* loadDashboardSequenced() {
         yield take('FETCH_USER_SUCCESS');
         const user = yield select(getUserFromState);
         const departure = yield call(loadDeparture, user);
-        const flight = yield call(loadFlight,departure.flightID);
+        const flight = yield call(loadFlight, departure.flightID);
         const forecast = yield call(loadForecast, departure.data);
         yield put({ type: 'FETCH_DASHBOARD_SUCCESS', payload: {forecast, flight, departure} });
     } catch (e) {
